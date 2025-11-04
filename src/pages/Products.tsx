@@ -4,79 +4,88 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import productDrill from "@/assets/product-drill.jpg";
-import productCable from "@/assets/product-cable.jpg";
-import productValve from "@/assets/product-valve.jpg";
+import productCableYellow from "@/assets/product-cable-yellow.jpg";
+import productBallValve from "@/assets/product-ball-valve.jpg";
+import productScrewdriver from "@/assets/product-screwdriver.jpg";
+import productCopperWire from "@/assets/product-copper-wire.jpg";
+import productPressureValve from "@/assets/product-pressure-valve.jpg";
+import productImpactDrill from "@/assets/product-impact-drill.jpg";
+import productRigidWire from "@/assets/product-rigid-wire.jpg";
+import productCheckValve from "@/assets/product-check-valve.jpg";
+import productRotaryHammer from "@/assets/product-rotary-hammer.jpg";
+import productPPCable from "@/assets/product-pp-cable.jpg";
+import productGardenFaucet from "@/assets/product-garden-faucet.jpg";
+import productAngleGrinder from "@/assets/product-angle-grinder.jpg";
 
 const allProducts = [
   {
-    image: productCable,
+    image: productCableYellow,
     name: "Cabo Elétrico Amarelo",
     description: "Cabo flexível de alta qualidade para instalações elétricas",
     category: "Elétrica",
   },
   {
-    image: productValve,
+    image: productBallValve,
     name: "Válvula Esfera",
     description: "Válvula em metal para água, alta durabilidade",
     category: "Hidráulica",
   },
   {
-    image: productDrill,
+    image: productScrewdriver,
     name: "Parafusadeira Profissional",
     description: "Ferramenta de alta performance para trabalhos pesados",
     category: "Ferramentas",
   },
   {
-    image: productCable,
+    image: productCopperWire,
     name: "Cabo de Cobre 2.5mm",
     description: "Cabo elétrico flexível para circuitos residenciais",
     category: "Elétrica",
   },
   {
-    image: productValve,
+    image: productPressureValve,
     name: "Registro de Pressão",
     description: "Registro metálico para controle de fluxo de água",
     category: "Hidráulica",
   },
   {
-    image: productDrill,
+    image: productImpactDrill,
     name: "Furadeira de Impacto",
     description: "Potente furadeira para alvenaria e concreto",
     category: "Ferramentas",
   },
   {
-    image: productCable,
+    image: productRigidWire,
     name: "Fio Rígido 1.5mm",
     description: "Fio condutor para instalações fixas",
     category: "Elétrica",
   },
   {
-    image: productValve,
+    image: productCheckValve,
     name: "Válvula de Retenção",
     description: "Impede retorno de fluxo em tubulações",
     category: "Hidráulica",
   },
   {
-    image: productDrill,
+    image: productRotaryHammer,
     name: "Martelete Rotativo",
     description: "Ideal para perfurações em concreto armado",
     category: "Ferramentas",
   },
   {
-    image: productCable,
+    image: productPPCable,
     name: "Cabo PP 3x2.5mm",
     description: "Cabo paralelo para uso externo",
     category: "Elétrica",
   },
   {
-    image: productValve,
+    image: productGardenFaucet,
     name: "Torneira de Jardim",
     description: "Torneira robusta para áreas externas",
     category: "Hidráulica",
   },
   {
-    image: productDrill,
+    image: productAngleGrinder,
     name: "Lixadeira Angular",
     description: "Perfeita para acabamentos e cortes",
     category: "Ferramentas",
@@ -90,21 +99,41 @@ const ProductsPage = () => {
       
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary to-destructive text-primary-foreground py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors"
-            >
-              <ArrowLeft size={20} />
-              Voltar
-            </Link>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-              Catálogo de Produtos
-            </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-2xl animate-fade-in">
-              Materiais e ferramentas de qualidade para sua construção
-            </p>
+        <section className="relative bg-gradient-to-br from-primary via-primary/90 to-destructive text-primary-foreground py-16 md:py-24 overflow-hidden">
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,transparent,black)]" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-destructive/20 rounded-full blur-3xl" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+              <Link 
+                to="/" 
+                className="inline-flex items-center gap-2 text-primary-foreground hover:text-accent transition-colors group w-fit"
+              >
+                <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                <span className="font-medium">Voltar</span>
+              </Link>
+              <Link to="/#contato">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-background text-foreground hover:bg-background/90 shadow-lg"
+                >
+                  Solicitar Orçamento
+                </Button>
+              </Link>
+            </div>
+            
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+                Catálogo de <span className="text-accent">Produtos</span>
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/90 leading-relaxed animate-fade-in">
+                Materiais e ferramentas de qualidade profissional para sua construção. 
+                Produtos selecionados para garantir durabilidade e performance.
+              </p>
+            </div>
           </div>
         </section>
 
