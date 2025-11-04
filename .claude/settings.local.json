@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git remote:*)"
+      "Bash(git remote:*)",
+      "Bash(npm run build:*)",
+      "Bash(gh run list:*)"
     ],
     "deny": [],
     "ask": []
