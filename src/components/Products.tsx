@@ -1,5 +1,6 @@
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 import productDrill from "@/assets/product-drill.jpg";
 import productCable from "@/assets/product-cable.jpg";
 import productValve from "@/assets/product-valve.jpg";
@@ -64,12 +65,14 @@ const Products = () => {
         </div>
 
         <div className="text-center">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
-          >
-            VER TODOS OS PRODUTOS
-          </Button>
+          <Link to="/produtos">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
+            >
+              VER TODOS OS PRODUTOS
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
